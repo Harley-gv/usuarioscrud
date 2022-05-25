@@ -8,26 +8,32 @@ function App() {
 
    const [users, setUsers] = useState([]);
    const [userSelected, setUserSelected] = useState(null);
-   
-   useEffect(()=> {
+
+
+   useEffect(() => {
       axios.get('https://users-crud1.herokuapp.com/users/').then(res => setUsers(res.data))
-   },[])
+   }, [])
+
 
    const update = () => {
-    axios.get('https://users-crud1.herokuapp.com/users/').then(res => setUsers(res.data))
+      axios.get('https://users-crud1.herokuapp.com/users/').then(res => setUsers(res.data))
    }
-    
-   
-   
-   
-   const selectedUser = user => setUserSelected(user); 
-   
-  return (
-    <div className="App">
-       < Header/>
-       < UsersList users={users} update={update} selectedUser={selectedUser} selected={userSelected}/>
-    </div>
-  );
+
+
+   const deleteUser = (id) => {
+      axios.delete(`https://users-crud1.herokuapp.com/users/${id}/`).then(() => update())
+   }
+
+
+   const selectedUser = user => setUserSelected(user);
+
+
+   return (
+      <div className="App">
+         < Header />
+         < UsersList users={users} update={update} selectedUser={selectedUser} selected={userSelected} deleteUser={deleteUser} />
+      </div>
+   );
 }
 
 export default App;

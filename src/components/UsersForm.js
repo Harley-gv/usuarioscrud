@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './UsersForm.css'
 
-const UsersForm = ({ update, selected}) => {
+const UsersForm = ({ update, selected }) => {
 
     const [name, setName] = useState('')
     const [firstName, setFirstName] = useState('')
@@ -38,8 +38,6 @@ const UsersForm = ({ update, selected}) => {
             axios.post('https://users-crud1.herokuapp.com/users/', user).then(() => update())
         }
     }
-
-
 
 
     return (
@@ -117,7 +115,7 @@ const UsersForm = ({ update, selected}) => {
                     <button type='submit' >Add user</button>
                 </div>
             </form>
-            
+
         </div>
     );
 };
