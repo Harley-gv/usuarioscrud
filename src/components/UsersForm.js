@@ -34,8 +34,13 @@ const UsersForm = ({ update, selected }) => {
         }
         if (selected !== null) {
             axios.put(`https://users-crud1.herokuapp.com/users/${selected.id}/`, user).then(() => update())
+            setName('')
+            setFirstName('')
+            setEmail('')
+            setPassword('')
+            setDate('')
         } else {
-            axios.post('https://users-crud1.herokuapp.com/users/', user).then(() => update())
+            axios.post('https://users-crud1.herokuapp.com/users/', user).then(() => update())   
         }
     }
 
@@ -112,7 +117,7 @@ const UsersForm = ({ update, selected }) => {
                         onChange={e => setDate(e.target.value)}
                     />
 
-                    <button type='submit' >Add user</button>
+                    <button type='submit' id='add' >Submit</button>
                 </div>
             </form>
 

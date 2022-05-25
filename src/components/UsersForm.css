@@ -1,6 +1,5 @@
 .form {
    text-align: center;
-   border: solid;
    margin: 1rem;
    margin-left: 20%;
    margin-right: 20%;
@@ -13,4 +12,9 @@
     justify-content: center;
     margin-left: 10%;
     margin-right: 10%;
+}
+
+#add {
+    outline: none;
+    
 }

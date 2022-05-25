@@ -24,9 +24,11 @@ const UsersList = ({ users, update, selectedUser, selected, deleteUser }) => {
                             <h3>Cumpleaños:</h3>
                             <p>{user.birthday}</p>
 
-                            <button onClick={() => selectedUser(user)} >edit</button>
-                            <button onClick={() => deleteUser(user.id)}>delete</button>
-                            <p>{user.id}</p>
+                            <div className="btn">
+                                <button onClick={() => selectedUser(user)}>edit</button>
+                                <button onClick={() => deleteUser(user.id)}>delete</button>
+                            </div>
+
                         </li>
 
                     ))

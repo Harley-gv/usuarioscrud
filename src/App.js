@@ -14,7 +14,6 @@ function App() {
       axios.get('https://users-crud1.herokuapp.com/users/').then(res => setUsers(res.data))
    }, [])
 
-
    const update = () => {
       axios.get('https://users-crud1.herokuapp.com/users/').then(res => setUsers(res.data))
    }
